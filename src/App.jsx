@@ -312,8 +312,14 @@ return { id: uid(), type: 'orange', title: 'Abnormal Sensor Pattern', desc: 'Com
 
 if (r.temperature > 37.5) {
 
-`return { id: uid(), type: 'yellow', title: 'Slightly Elevated Temperature', desc: `Thermal reading of ${r.temperature.toFixed(1)}\u00b0C requires attention.`, ts: r.timestamp, source: 'Thermal Sensor' };`
-
+return {
+  id: uid(),
+  type: 'yellow',
+  title: 'Slightly Elevated Temperature',
+  desc: `Thermal reading of ${r.temperature.toFixed(1)}°C requires attention.`,
+  ts: r.timestamp,
+  source: 'Thermal Sensor'
+};
 }
 
 if (r.aqi > 150) {
